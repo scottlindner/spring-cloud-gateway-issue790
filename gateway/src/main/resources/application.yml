@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+EUREKA_BASE_URL: http://localhost:8761
+eureka:
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: ${EUREKA_BASE_URL}/eureka
+  instance:
+    hostname: localhost
+    nonSecurePortEnabled: false
+    securePort: 443
+    securePortEnabled: true
+    statusPageUrl: https://${eureka.instance.hostname}/actuator/info
+    healthCheckUrl: https://${eureka.instance.hostname}/actuator/health
+    homePageUrl: https://${eureka.instance.hostname}/

@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: gateway
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
